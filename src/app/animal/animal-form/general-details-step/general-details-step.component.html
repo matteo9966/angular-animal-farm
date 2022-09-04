@@ -1,0 +1,43 @@
+<div [formGroup]="generalDetailsFormGroup" class="general-form-container">
+  <mat-form-field>
+    <mat-label>Id</mat-label>
+    <input type="text" matInput placeholder="animal Id" formControlName="id" />
+    <mat-hint align="end">
+      {{ getControlProperty("id").value.length }}/100
+    </mat-hint>
+    <mat-error *ngIf="getControlProperty('id').invalid">
+        {{getControlPropertyError('id','required')}}
+    </mat-error>
+    <!-- mat-error per mostrare un errore -->
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input type="text" matInput placeholder="Name" formControlName="name" />
+    <mat-error *ngIf="getControlProperty('name').invalid">
+        {{getControlPropertyError('name','required')}}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Birthday Date</mat-label>
+    <input
+      type="text"
+      matInput
+      placeholder="Birthday"
+      formControlName="birthday"
+      [matDatepicker]="birthday"
+    />
+    <mat-datepicker-toggle matSuffix [for]="birthday"></mat-datepicker-toggle>
+    <mat-datepicker #birthday></mat-datepicker>
+    <mat-error *ngIf="getControlProperty('birthday').invalid">
+        {{getControlPropertyError('birthday','required')}}
+    </mat-error>
+  </mat-form-field>
+  <mat-radio-group class="gender-radio-group" aria-label="Select an option" formControlName="gender" [value]="getControlProperty('gender').value">
+    <mat-radio-button value="M" >Male</mat-radio-button>
+    <mat-radio-button value="F">Female</mat-radio-button>
+    <mat-error *ngIf="getControlProperty('gender').invalid">
+        {{getControlPropertyError('gender','required')}}
+    </mat-error>
+
+  </mat-radio-group>
+</div>

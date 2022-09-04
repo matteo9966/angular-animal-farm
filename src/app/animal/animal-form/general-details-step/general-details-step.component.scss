@@ -1,0 +1,12 @@
+@use "../../../global-style/variables.scss" as v;
+@use "sass:map";
+.general-form-container {
+  display: flex;
+  flex-direction: column;
+    margin: auto;
+}
+
+.gender-radio-group{
+    display: flex;
+    gap:20px;
+}

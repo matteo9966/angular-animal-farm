@@ -1,0 +1,33 @@
+<form [formGroup]="animalForm" >
+   <mat-horizontal-stepper [linear]="false" labelPosition="bottom">
+    
+      <mat-step [stepControl]="generalDetailsFormGroup">
+        <ng-template matStepLabel>General Details</ng-template>
+        <div class="form-container">
+
+          <app-general-details-step [formGroup]="generalDetailsFormGroup"></app-general-details-step> 
+        </div>
+        <!-- passo il form group a un property bind di questi components -->
+        <div class="step-buttons">
+          <button mat-raised-button color="primary" matStepperNext>Go to Animal Details</button>
+        </div>
+      </mat-step>
+      <mat-step [stepControl]="profileDetailsFormGroup">
+        <ng-template matStepLabel>Profile Details</ng-template>
+        <div class="form-container">
+
+          <app-profile-details-step [formGroup]="profileDetailsFormGroup"></app-profile-details-step>
+        </div>
+        <div class="step-buttons">
+         <button mat-raised-button matStepperPrevious>Back</button>
+         <button  mat-raised-button color="accent"  (click)="submitForm()">Submit Form</button>
+        </div>
+      </mat-step>
+       
+   </mat-horizontal-stepper>
+
+   <div *ngIf="animalForm.valid && submittedForm">
+    {{submittedForm|json}}
+   </div>
+    
+</form>

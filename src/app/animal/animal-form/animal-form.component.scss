@@ -1,0 +1,22 @@
+@use "../../global-style/variables.scss" as v;
+@use "sass:map";
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin: auto;
+
+
+  @media screen and (min-width: map.get(v.$grid-breakpoints,"lg")) {
+    width: 50vw;
+    max-width: 500px;
+  }
+}
+
+
+.step-buttons{
+    display: flex;
+    gap:25px;
+    padding:10px;
+    justify-content: center;
+}
