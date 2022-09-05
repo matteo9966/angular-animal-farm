@@ -10,6 +10,10 @@ import { MatInputModule } from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+import {MatTableModule} from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 const materialModules = [
   MatStepperModule,
@@ -18,6 +22,10 @@ const materialModules = [
   MatInputModule,
   MatRadioModule,
   MatDatepickerModule,
+  MatSelectModule,
+  MatTableModule,
+  MatSortModule,
+  MatProgressSpinnerModule,
 ];
 @NgModule({
   declarations: [],

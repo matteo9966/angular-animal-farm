@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ValidationErrors } from '@angular/forms';
+import { AnimalService } from '../../animal.service';
 import { AnimalGeneralFormControls } from '../constants/animal-form-control-names';
 
 @Component({
@@ -15,7 +16,7 @@ export class GeneralDetailsStepComponent implements OnInit {
     gender:string;
 */
 
-  constructor() {}
+  constructor(private animalService:AnimalService) {}
   @Input('formGroup') generalDetailsFormGroup!: FormGroup;
   ngOnInit(): void {}
 
@@ -32,5 +33,13 @@ export class GeneralDetailsStepComponent implements OnInit {
     }
     return `${controlName} has a field errror`
 
+  }
+
+  get animalSpeciesListOption(){
+    return this.animalService.species;
+  }
+
+  get selectedSpeciesElement(){
+    return this.generalDetailsFormGroup.get('species')?.value || "";
   }
 }

@@ -41,10 +41,10 @@ export class AnimalFormComponent implements OnInit {
       id:this.fb.control('',{validators:Validators.required}),
       name:this.fb.control('',{validators:Validators.required}),
       birthday:this.fb.control('',{validators:Validators.required}),
-      gender:this.fb.control('M',{validators:Validators.required}),
-     }),
-     profileDetails:this.fb.group({
       species:this.fb.control('',{validators:Validators.required}),
+      gender:this.fb.control('M',{validators:Validators.required}),
+    }),
+     profileDetails:this.fb.group({
       shortDescription:this.fb.control('',{validators:Validators.required}),
       longDescription:this.fb.control('',{validators:Validators.required}),
       imageUrl:this.fb.control('',{validators:Validators.required}),

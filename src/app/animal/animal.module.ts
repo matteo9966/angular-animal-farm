@@ -6,6 +6,7 @@ import { GeneralDetailsStepComponent } from './animal-form/general-details-step/
 import { ProfileDetailsStepComponent } from './animal-form/profile-details-step/profile-details-step.component';
 import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AnimalDataTableComponent } from './animal-data-table/animal-data-table.component';
 
 
 
@@ -15,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AnimalsComponent,
     GeneralDetailsStepComponent,
     ProfileDetailsStepComponent,
+    AnimalDataTableComponent,
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
 
   ],
-  exports:[AnimalFormComponent]
+  exports:[AnimalFormComponent,AnimalDataTableComponent]
 
 })
 export class AnimalModule { }

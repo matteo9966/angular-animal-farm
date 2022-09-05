@@ -1,0 +1,35 @@
+<!-- 
+
+     birthday: new Date().toString(),
+      gender: 'M',
+      id: 2,
+      imageUrl: '',
+      longDescription: 'animale1 desc',
+      name: 'Mucca',
+      shortDescription: 'short description of animale1',
+      species: 'cow',
+ -->
+<table mat-table class="animal-list-table mat-elevation-z8" style="width: 100%;" [dataSource]="animalsList">
+
+    <ng-container matColumnDef="name">
+     <th mat-header-cell *matHeaderCellDef>Name</th>
+     <td mat-cell *matCellDef="let animal">{{animal.name}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="gender">
+        <th mat-header-cell *matHeaderCellDef>Gender</th>
+        <td mat-cell *matCellDef="let animal">{{animal.gender}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="species">
+        <th mat-header-cell *matHeaderCellDef>Species</th>
+        <td mat-cell *matCellDef="let animal">{{animal.species}}</td>
+    </ng-container>
+    <ng-container matColumnDef="birthday">
+        <th mat-header-cell *matHeaderCellDef>Birthday</th>
+        <td mat-cell *matCellDef="let animal">{{animal.birthday}}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let animal;columns:displayedColumns"></tr>
+
+</table>
